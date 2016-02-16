@@ -637,14 +637,14 @@ def Main(x):
 
     while memecount < iterations:
         print "current itteration count is: " + str(memecount)
-        
+
         print str(header1.lower())
         print str(s1.lower())
         print str(s5.lower())
-        
-        
-        if  header1.lower() == s1.lower() or header1.lower() == s5.lower():
-            
+
+
+        if  header1.lower() == s1.lower() or header1.lower() == s5.lower() or str(header1.lower()) == "discoverrrdiscoveryunivision":
+
             #print "DANK ACHIEVED"
 
             titleCheck()
