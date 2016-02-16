@@ -637,7 +637,14 @@ def Main(x):
 
     while memecount < iterations:
         print "current itteration count is: " + str(memecount)
+        
+        print str(header1.lower())
+        print str(s1.lower())
+        print str(s5.lower())
+        
+        
         if  header1.lower() == s1.lower() or header1.lower() == s5.lower():
+            
             #print "DANK ACHIEVED"
 
             titleCheck()
@@ -645,13 +652,8 @@ def Main(x):
 
             if title.lower() == titleCompare1.lower():
                 Mashables()
-
             elif title.lower() == titleCompare5.lower():
                 RR_Discovery()
-
-            elif title.lower() == "DISCOVER RR DISCOVERY UNIVISION":
-                RR_Discovery()
-
             else:
                 univision()
 
