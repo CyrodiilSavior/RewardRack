@@ -23,12 +23,13 @@ s3Buttons = "Earn4.00MorePoints"
 s4Buttons = "Earn2.00MorePoints"
 s6Buttons = "Earn0.50MorePoints"
 claimButtons = "ClaimPoints"
-s1 = "DISCOVERUNIVISION"
+s1 = "DISCOVERRRDISCOVERYUNIVISION"
 s2 = "DISCOVERBET"
 s3 = "discoversmallbet"
 s4 = "DISCOVERMASHABLE"
 s5 = "DISCOVERRRDISCOVERY"
 s6 = "DISCOVERBET1VIDEO"
+s7 = ""
 titleCompare1 = "REWARDRACK|OFFER:MASHABLE"
 titleCompare5 = "REWARDRACK|OFFER:RRDISCOVERY"
 titleCompare6 = "REWARDRACK|OFFER:BET1VIDEO"
@@ -38,6 +39,7 @@ header1 = ""
 parentWindowHandle = None
 offerWindowHandle = None
 browser = None
+buttonCheck = None
 
 
 def titleCheck():
@@ -59,6 +61,7 @@ def titleCheck():
     global failCount
     global browser
     global refresh
+    global buttonCheck
     if refresh<1:
 	    while not parentWindowHandle:
                 parentWindowHandle = browser.current_window_handle
@@ -94,6 +97,7 @@ def univision():
     global memecount
     global failCount
     global browser
+    global buttonCheck
     waiter = WebDriverWait(browser, 180)
     try:
         element = waiter.until(EC.element_to_be_clickable((By.ID,"btn-next-step")))
@@ -144,37 +148,70 @@ def univision():
     #print buttonCheck.lower()
 
 
+    nextOffer(1)
+
+
+
+def nextOffer(prevOffer):
+    global s1Buttons
+    global s2Buttons
+    global s3Buttons
+    global s1
+    global s2
+    global s3
+    global titleCompare1
+    global title
+    global header1
+    global parentWindowHandle
+    global offerWindowHandle
+    global memecount
+    global failCount
+    global browser
+    global refresh
+    global iterations
+    global buttonCheck
+
+
     if buttonCheck.lower() == s1Buttons.lower():
         print "next offer button clicked"
         browser.find_element_by_link_text("Earn 3.00 More Points").click()
-        header1 = "discoverunivision"
+        header1 = "discoverrrdiscoveryunivision"
         print "Spanish has continued"
+        if prevOffer != 1:
+            offerWindowHandle = None
 
     elif buttonCheck.lower() == s2Buttons.lower():
         print "next offer button clicked"
         browser.find_element_by_link_text("Earn 6.00 More Points").click()
         header1 = "discoverbet"
-        offerWindowHandle = None
         print "Black has continued"
+        if prevOffer != 2:
+            offerWindowHandle = None
 
     elif buttonCheck.lower() == s3Buttons.lower():
         header1 = "discoversmallbet"
         print "Small bet has continued"
-        offerWindowHandle = None
         browser.find_element_by_link_text("Earn 4.00 More Points").click()
+        if prevOffer != 3:
+            offerWindowHandle = None
 
     elif buttonCheck.lower() == s4Buttons.lower():
         header1 = "DISCOVERMASHABLE"
         print "mashy has continued"
-        OfferWindowHandle = None
         browser.find_element_by_link_text("Earn 2.00 More Points").click()
+        if prevOffer != 4:
+            offerWindowHandle = None
+
+    elif buttonCheck.lower() == s6Buttons.lower():
+        header1 = "DISCOVERBET1VIDEO"
+        print "1 video bet has continued"
+        browser.find_element_by_link_text("Earn 0.50 More Points").click()
+        if prevOffer != 5:
+            offerWindowHandle = None
 
     else:
         print "Dank has found something new" + buttonCheck.lower()
         browser.find_element_by_xpath("//a").click()
-
-
-
 
 
 
@@ -193,6 +230,7 @@ def BET():
     global memecount
     global failCount
     global browser
+    global buttonCheck
     waiter = WebDriverWait(browser, 180)
     try:
         element = waiter.until(EC.element_to_be_clickable((By.ID,"next-step-button")))
@@ -296,6 +334,7 @@ def Mashables():
     global failCount
     global claimButtons
     global browser
+    global buttonCheck
 
     waiter = WebDriverWait(browser, 180)
     try:
@@ -396,6 +435,8 @@ def RR_Discovery():
     global memecount
     global failCount
     global browser
+    global buttonCheck
+
     waiter = WebDriverWait(browser, 180)
     try:
         element = waiter.until(EC.element_to_be_clickable((By.ID,"btn-next-step")))
@@ -493,7 +534,7 @@ def OneVideo():
     global browser
     global refresh
     global iterations
-
+    global buttonCheck
 
     waiter = WebDriverWait(browser, 210)
     try:
@@ -574,6 +615,7 @@ def Main(x):
     global browser
     global refresh
     global iterations
+    global buttonCheck
 
     memecount = x
     refresh = 0
@@ -638,7 +680,7 @@ def Main(x):
     while memecount < iterations:
         print "current itteration count is: " + str(memecount)
 
-        if  header1.lower() == s1.lower() or header1.lower() == s5.lower() or str(header1.lower()) == "discoverrrdiscoveryunivision":
+        if  header1.lower() == s1.lower() or header1.lower() == s5.lower():
 
             #print "DANK ACHIEVED"
 
@@ -688,7 +730,7 @@ def Main(x):
 
 
         else:
-            print "DANDY NO SPANKEY!"
+            print "DANKY NO SPANKEY!"
             break
 
 
