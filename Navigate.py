@@ -130,6 +130,12 @@ def univision():
         element = waiter.until(EC.element_to_be_clickable((By.ID,"btn-next-step")))
         print "Step 10 done waiting"
         browser.find_element_by_link_text("Next Step").click()
+        element = waiter.until(EC.element_to_be_clickable((By.ID,"btn-next-step")))
+        print "Step 11 done waiting"
+        browser.find_element_by_link_text("Next Step").click()
+        element = waiter.until(EC.element_to_be_clickable((By.ID,"btn-next-step")))
+        print "Step 12 done waiting"
+        browser.find_element_by_link_text("Next Step").click()
         element = waiter.until(EC.element_to_be_clickable((By.XPATH,"//a")))
         print "Claim waiting"
         browser.find_element_by_xpath("//a").click()
@@ -151,67 +157,6 @@ def univision():
     nextOffer(1)
 
 
-
-def nextOffer(prevOffer):
-    global s1Buttons
-    global s2Buttons
-    global s3Buttons
-    global s1
-    global s2
-    global s3
-    global titleCompare1
-    global title
-    global header1
-    global parentWindowHandle
-    global offerWindowHandle
-    global memecount
-    global failCount
-    global browser
-    global refresh
-    global iterations
-    global buttonCheck
-
-
-    if buttonCheck.lower() == s1Buttons.lower():
-        print "next offer button clicked"
-        browser.find_element_by_link_text("Earn 3.00 More Points").click()
-        header1 = "discoverrrdiscoveryunivision"
-        print "Spanish has continued"
-        if prevOffer != 1:
-            offerWindowHandle = None
-
-    elif buttonCheck.lower() == s2Buttons.lower():
-        print "next offer button clicked"
-        browser.find_element_by_link_text("Earn 6.00 More Points").click()
-        header1 = "discoverbet"
-        print "Black has continued"
-        if prevOffer != 2:
-            offerWindowHandle = None
-
-    elif buttonCheck.lower() == s3Buttons.lower():
-        header1 = "discoversmallbet"
-        print "Small bet has continued"
-        browser.find_element_by_link_text("Earn 4.00 More Points").click()
-        if prevOffer != 3:
-            offerWindowHandle = None
-
-    elif buttonCheck.lower() == s4Buttons.lower():
-        header1 = "DISCOVERMASHABLE"
-        print "mashy has continued"
-        browser.find_element_by_link_text("Earn 2.00 More Points").click()
-        if prevOffer != 4:
-            offerWindowHandle = None
-
-    elif buttonCheck.lower() == s6Buttons.lower():
-        header1 = "DISCOVERBET1VIDEO"
-        print "1 video bet has continued"
-        browser.find_element_by_link_text("Earn 0.50 More Points").click()
-        if prevOffer != 5:
-            offerWindowHandle = None
-
-    else:
-        print "Dank has found something new" + buttonCheck.lower()
-        browser.find_element_by_xpath("//a").click()
 
 
 
@@ -282,34 +227,7 @@ def BET():
     buttonCheck = buttonCheck.replace(" ","")
     print buttonCheck.lower()
 
-
-    if buttonCheck.lower() == s1Buttons.lower():
-        header1 = "discoverunivision"
-        offerWindowHandle = None
-        print "Spanish has continued"
-        browser.find_element_by_xpath("//button").click()
-
-    elif buttonCheck.lower() == s2Buttons.lower():
-        header1 = "discoverbet"
-        print "Black has continued"
-        browser.find_element_by_xpath("//button").click()
-
-    elif buttonCheck.lower() == s3Buttons.lower():
-        header1 = "discoversmallbet"
-	offerWindowHandle = None
-        print "Potatoes has continued"
-        browser.find_element_by_xpath("//button").click()
-
-    elif buttonCheck.lower() == s4Buttons.lower():
-        header1 = "DISCOVERMASHABLE"
-        print "mashy has continued"
-        OfferWindowHandle = None
-        browser.find_element_by_xpath("//button").click()
-
-    else:
-        print "Dank has found something new" + buttonCheck.lower()
-        browser.find_element_by_xpath("//button").click()
-
+    nextOffer(2)
 
 
 
@@ -392,29 +310,8 @@ def Mashables():
     buttonCheck = browser.find_element_by_xpath("//button").text
     buttonCheck = buttonCheck.replace(" ","")
     print buttonCheck.lower()
-    if buttonCheck.lower() == s1Buttons.lower():
-        header1 = "discoverunivision"
-        offerWindowHandle = None
-        print "Spanish has continued"
-        browser.find_element_by_xpath("//button").click()
-    elif buttonCheck.lower() == s2Buttons.lower():
-        header1 = "discoverbet"
-        print "Black has continued"
-        OfferWindowHandle = None
-        browser.find_element_by_xpath("//button").click()
-    elif buttonCheck.lower() == s3Buttons.lower():
-        header1 = "discoversmallbet"
-	offerWindowHandle = None
-        print "Potatoes has continued"
-        browser.find_element_by_xpath("//button").click()
-    elif buttonCheck.lower() == s4Buttons.lower():
-        header1 = "DISCOVERMASHABLE"
-        print "mashy has continued"
-        browser.find_element_by_xpath("//button").click()
-    else:
-        print "Dank has found something new" + buttonCheck.lower()
-        browser.find_element_by_xpath("//button").click()
-
+    
+    nextOffer(4)
 
 
 
@@ -486,35 +383,7 @@ def RR_Discovery():
     buttonCheck = buttonCheck.replace(" ","")
     #print buttonCheck.lower()
 
-
-    if buttonCheck.lower() == s1Buttons.lower():
-        print "next offer button clicked"
-        browser.find_element_by_link_text("Earn 3.00 More Points").click()
-        header1 = "discoverunivision"
-        print "Spanish has continued"
-
-    elif buttonCheck.lower() == s2Buttons.lower():
-        print "next offer button clicked"
-        browser.find_element_by_link_text("Earn 6.00 More Points").click()
-        header1 = "discoverbet"
-        offerWindowHandle = None
-        print "Black has continued"
-
-    elif buttonCheck.lower() == s3Buttons.lower():
-        header1 = "discoversmallbet"
-        print "Small bet has continued"
-        offerWindowHandle = None
-        browser.find_element_by_link_text("Earn 4.00 More Points").click()
-
-    elif buttonCheck.lower() == s4Buttons.lower():
-        header1 = "DISCOVERMASHABLE"
-        print "mashy has continued"
-        OfferWindowHandle = None
-        browser.find_element_by_link_text("Earn 2.00 More Points").click()
-
-    else:
-        print "Dank has found something new" + buttonCheck.lower()
-        browser.find_element_by_xpath("//a").click()
+    nextOffer(1)
 
 
 def OneVideo():
@@ -559,41 +428,113 @@ def OneVideo():
     #print buttonCheck.lower()
 
 
-    if buttonCheck.lower() == s1Buttons.lower():
-        print "next offer button clicked"
-        browser.find_element_by_link_text("Earn 3.00 More Points").click()
-        header1 = "discoverunivision"
-        print "Spanish has continued"
-        offerWindowHandle = None
-
-    elif buttonCheck.lower() == s2Buttons.lower():
-        print "next offer button clicked"
-        browser.find_element_by_link_text("Earn 6.00 More Points").click()
-        header1 = "discoverbet"
-        offerWindowHandle = None
-        print "Black has continued"
-
-    elif buttonCheck.lower() == s3Buttons.lower():
-        header1 = "discoversmallbet"
-        print "Small bet has continued"
-        offerWindowHandle = None
-        browser.find_element_by_link_text("Earn 4.00 More Points").click()
-
-    elif buttonCheck.lower() == s4Buttons.lower():
-        header1 = "DISCOVERMASHABLE"
-        print "mashy has continued"
-        OfferWindowHandle = None
-        browser.find_element_by_link_text("Earn 2.00 More Points").click()
+    nextOffer(5)
 
 
-    elif buttonCheck.lower() == s6Buttons.lower():
-        header1 = "DISCOVERBET1VIDEO"
-        print "1 video bet has continued"
-        browser.find_element_by_link_text("Earn 0.50 More Points").click()
 
+
+
+def nextOffer(prevOffer):
+    global s1Buttons
+    global s2Buttons
+    global s3Buttons
+    global s1
+    global s2
+    global s3
+    global titleCompare1
+    global title
+    global header1
+    global parentWindowHandle
+    global offerWindowHandle
+    global memecount
+    global failCount
+    global browser
+    global refresh
+    global iterations
+    global buttonCheck
+
+    if prevOffer == 1 or prevOffer == 5:
+        if buttonCheck.lower() == s1Buttons.lower():
+            print "next offer button clicked"
+            browser.find_element_by_link_text("Earn 3.00 More Points").click()
+            header1 = "discoverrrdiscoveryunivision"
+            print "Spanish has continued"
+            if prevOffer != 1:
+                offerWindowHandle = None
+    
+        elif buttonCheck.lower() == s2Buttons.lower():
+            print "next offer button clicked"
+            browser.find_element_by_link_text("Earn 6.00 More Points").click()
+            header1 = "discoverbet"
+            print "Black has continued"
+            if prevOffer != 2:
+                offerWindowHandle = None
+    
+        elif buttonCheck.lower() == s3Buttons.lower():
+            header1 = "discoversmallbet"
+            print "Small bet has continued"
+            browser.find_element_by_link_text("Earn 4.00 More Points").click()
+            if prevOffer != 3:
+                offerWindowHandle = None
+    
+        elif buttonCheck.lower() == s4Buttons.lower():
+            header1 = "DISCOVERMASHABLE"
+            print "mashy has continued"
+            browser.find_element_by_link_text("Earn 2.00 More Points").click()
+            if prevOffer != 4:
+                offerWindowHandle = None
+    
+        elif buttonCheck.lower() == s6Buttons.lower():
+            header1 = "DISCOVERBET1VIDEO"
+            print "1 video bet has continued"
+            browser.find_element_by_link_text("Earn 0.50 More Points").click()
+            if prevOffer != 5:
+                offerWindowHandle = None
+    
+        else:
+            print "Dank has found something new" + buttonCheck.lower()
+            browser.find_element_by_xpath("//a").click()
+            
     else:
-        print "Dank has found something new" + buttonCheck.lower()
-        browser.find_element_by_xpath("//a").click()
+        
+        if buttonCheck.lower() == s1Buttons.lower():
+            header1 = "discoverrrdiscoveryunivision"
+            print "Spanish has continued"
+            browser.find_element_by_xpath("//button").click()
+            if prevOffer != 1:
+                offerWindowHandle = None
+            
+        elif buttonCheck.lower() == s2Buttons.lower():
+            header1 = "discoverbet"
+            print "Black has continued"
+            browser.find_element_by_xpath("//button").click()
+            if prevOffer != 2:
+                offerWindowHandle = None
+        
+        elif buttonCheck.lower() == s3Buttons.lower():
+            header1 = "discoversmallbet"
+            print "Potatoes has continued"
+            browser.find_element_by_xpath("//button").click()
+            if prevOffer != 3:
+                offerWindowHandle = None
+        
+        elif buttonCheck.lower() == s4Buttons.lower():
+            header1 = "DISCOVERMASHABLE"
+            print "mashy has continued"
+            browser.find_element_by_xpath("//button").click()
+            if prevOffer != 4:
+                offerWindowHandle = None
+        
+        elif buttonCheck.lower() == s6Buttons.lower():
+            header1 = "DISCOVERBET1VIDEO"
+            print "1 video bet has continued"
+            browser.find_element_by_xpath("//button").click()
+            if prevOffer != 5:
+                offerWindowHandle = None
+        
+        else:
+            print "Dank has found something new" + buttonCheck.lower()
+            browser.find_element_by_xpath("//button").click()
 
 
 
