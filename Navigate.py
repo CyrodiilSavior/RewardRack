@@ -130,6 +130,9 @@ def univision():
         element = waiter.until(EC.element_to_be_clickable((By.ID,"btn-next-step")))
         print "Step 10 done waiting"
         browser.find_element_by_link_text("Next Step").click()
+        element = waiter.until(EC.element_to_be_clickable((By.ID,"btn-next-step")))
+        print "Step 11 done waiting"
+        browser.find_element_by_link_text("Next Step").click()
         element = waiter.until(EC.element_to_be_clickable((By.XPATH,"//a")))
         print "Claim waiting"
         browser.find_element_by_xpath("//a").click()
