@@ -146,7 +146,7 @@ def univision():
 
     time.sleep(2)
     memecount += 1
-    buttonCheck = browser.find_element_by_id("btn-claim-points").text
+    buttonCheck = browser.find_element_by_xpath("//a").text
     buttonCheck = buttonCheck.replace(" ","")
     print buttonCheck.lower()
 
