@@ -139,7 +139,7 @@ def univision():
 
     time.sleep(2)
     memecount += 1
-    buttonCheck = browser.find_element_by_xpath("//a").text
+    buttonCheck = browser.find_element_by_id("btn-claim-points").text
     buttonCheck = buttonCheck.replace(" ","")
     #print buttonCheck.lower()
 
@@ -637,11 +637,6 @@ def Main(x):
 
     while memecount < iterations:
         print "current itteration count is: " + str(memecount)
-
-        print str(header1.lower())
-        print str(s1.lower())
-        print str(s5.lower())
-
 
         if  header1.lower() == s1.lower() or header1.lower() == s5.lower() or str(header1.lower()) == "discoverrrdiscoveryunivision":
 
