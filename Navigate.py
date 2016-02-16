@@ -622,6 +622,7 @@ def Main(x):
     browser.get('http://rewardrack.com/rr-discovery')
 
     header = browser.find_element_by_xpath("//h5")
+
     print header.text
 
     count = 3
@@ -646,6 +647,9 @@ def Main(x):
                 Mashables()
 
             elif title.lower() == titleCompare5.lower():
+                RR_Discovery()
+
+            elif title.lower() == "DISCOVER RR DISCOVERY UNIVISION":
                 RR_Discovery()
 
             else:
